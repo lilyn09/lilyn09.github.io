@@ -1,9 +1,152 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lily Nan - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            width: 200px;
+            background-color: #fff;
+            border-right: 1px solid #0d5e7e;
+            padding: 20px;
+            position: fixed;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .sidebar-menu {
+            margin-top: 80px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-menu a {
+            text-decoration: none;
+            color: #000;
+            font-size: 16px;
+            transition: color 0.3s;
+        }
+
+        .sidebar-menu a:hover {
+            color: #0d5e7e;
+        }
+
+        .main-content {
+            margin-left: 200px;
+            flex-grow: 1;
+            display: flex;
+        }
+
+        .content-area {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .image-area {
+            width: 250px;
+            background-color: #0d5e7e;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .section {
+            border: 1px solid #0d5e7e;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section h2 {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #0d5e7e;
+            padding-bottom: 5px;
+        }
+
+        .profile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border: 2px solid #0d5e7e;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #0d5e7e;
+        }
+
+        .name-title {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
 <body>
+    <div class="sidebar">
+        <nav class="sidebar-menu">
+            <a href="#intro">Intro</a>
+            <a href="#experience">Experience</a>
+            <a href="#education">Education</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </div>
 
-<h1>My First Heading</h1>
-<p>My first paragraph.</p>
+    <div class="main-content">
+        <div class="content-area">
+            <div class="name-title">
+                <h1>Lily Nan</h1>
+            </div>
+            
+            <section id="intro" class="section">
+                <h2>Intro</h2>
+                <div class="profile-header">
+                    <div>Some text about me</div>
+                    <div class="profile-photo">Photo of Me</div>
+                </div>
+            </section>
 
+            <section id="experience" class="section">
+                <h2>Experience</h2>
+                <p>Text</p>
+            </section>
+
+            <section id="education" class="section">
+                <h2>Education</h2>
+                <p>Text</p>
+            </section>
+
+            <section id="contact" class="section">
+                <h2>Contact</h2>
+                <p>Text</p>
+            </section>
+        </div>
+
+        <div class="image-area">
+            Image
+        </div>
+    </div>
 </body>
 </html>
