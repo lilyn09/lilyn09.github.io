@@ -1,152 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lily Nan - Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial, sans-serif;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lily Nan</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            display: flex;
-            min-height: 100vh;
-        }
+    body {
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+    }
 
-        .sidebar {
-            width: 200px;
-            background-color: #fff;
-            border-right: 1px solid #0d5e7e;
-            padding: 20px;
-            position: fixed;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
 
-        .sidebar-menu {
-            margin-top: 80px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+    .side-image {
+      background-color: #144d65;
+      color: white;
+      width: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      writing-mode: vertical-lr;
+      font-size: 1rem;
+      letter-spacing: 1px;
+    }
 
-        .sidebar-menu a {
-            text-decoration: none;
-            color: #000;
-            font-size: 16px;
-            transition: color 0.3s;
-        }
+    .main-content {
+      flex: 1;
+      background-color: #fff;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+    }
 
-        .sidebar-menu a:hover {
-            color: #0d5e7e;
-        }
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-        .main-content {
-            margin-left: 200px;
-            flex-grow: 1;
-            display: flex;
-        }
+    header h1 {
+      font-size: 1.8em;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
 
-        .content-area {
-            flex-grow: 1;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
 
-        .image-area {
-            width: 250px;
-            background-color: #0d5e7e;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-        }
+    nav a {
+      text-decoration: none;
+      color: #144d65;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
 
-        .section {
-            border: 1px solid #0d5e7e;
-            padding: 20px;
-            margin-bottom: 20px;
-        }
+    nav a:hover {
+      color: #0d2f3f;
+    }
 
-        .section h2 {
-            margin-bottom: 15px;
-            border-bottom: 1px solid #0d5e7e;
-            padding-bottom: 5px;
-        }
+    .card {
+      background: #fff;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
 
-        .profile-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .intro-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-        .profile-photo {
-            width: 120px;
-            height: 120px;
-            border: 2px solid #0d5e7e;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: #0d5e7e;
-        }
+    .intro-content .text {
+      flex: 1;
+      min-width: 200px;
+    }
 
-        .name-title {
-            margin-bottom: 20px;
-        }
-    </style>
+    .photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 2px solid #144d65;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.85em;
+      margin-top: 10px;
+      margin-left: 20px;
+    }
+
+    h2 {
+      font-size: 1.1em;
+      color: #144d65;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #eee;
+      padding-bottom: 5px;
+    }
+
+    p {
+      font-size: 0.95em;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .side-image {
+        width: 100%;
+        height: 60px;
+        writing-mode: horizontal-tb;
+      }
+
+      .intro-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .photo {
+        margin-left: 0;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="sidebar">
-        <nav class="sidebar-menu">
-            <a href="#intro">Intro</a>
-            <a href="#experience">Experience</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </div>
+  <div class="container">
+    <div class="side-image">Image</div>
 
     <div class="main-content">
-        <div class="content-area">
-            <div class="name-title">
-                <h1>Lily Nan</h1>
-            </div>
-            
-            <section id="intro" class="section">
-                <h2>Intro</h2>
-                <div class="profile-header">
-                    <div>Some text about me</div>
-                    <div class="profile-photo">Photo of Me</div>
-                </div>
-            </section>
+      <header>
+        <h1>Lily Nan</h1>
+        <nav>
+          <a href="#intro">Intro</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </header>
 
-            <section id="experience" class="section">
-                <h2>Experience</h2>
-                <p>Text</p>
-            </section>
-
-            <section id="education" class="section">
-                <h2>Education</h2>
-                <p>Text</p>
-            </section>
-
-            <section id="contact" class="section">
-                <h2>Contact</h2>
-                <p>Text</p>
-            </section>
+      <section id="intro" class="card">
+        <div class="intro-content">
+          <div class="text">
+            <h2>Intro</h2>
+            <p>Some text about me</p>
+          </div>
+          <div class="photo">Photo of Me</div>
         </div>
+      </section>
 
-        <div class="image-area">
-            Image
-        </div>
+      <section id="experience" class="card">
+        <h2>Experience</h2>
+        <p>Text</p>
+      </section>
+
+      <section id="education" class="card">
+        <h2>Education</h2>
+        <p>Text</p>
+      </section>
+
+      <section id="contact" class="card">
+        <h2>Contact</h2>
+        <p>Text</p>
+      </section>
     </div>
+
+    <div class="side-image">Image</div>
+  </div>
 </body>
 </html>
