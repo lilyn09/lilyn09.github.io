@@ -1,194 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lily Nan</title>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <title>Lily Nan Website</title>
+    <meta name="description" content="Lily Nan Website">
+    <meta name="keywords" content="Lily Nan">
+ <style>
+  body {
+    background-image: url('website_wallpaper.jpeg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI';
+  }
+ 
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+  header {
+    background-color: mediumpurple;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+  }
+ 
+ h1, h2, h3, h4 {
+    margin-top: 1em;
+    text-align: center;
+ 
+  }
+ 
+.rank-card {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9);
+  margin: 60px auto;
+  padding: 50px 40px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  box-shadow:
+    0 2px 10px rgba(0,0,0,0.1),
+    0 10px 20px rgba(0,0,0,0.15);
+transition: all 0.3s ease;
+}
+ 
+.rank-card:hover {
+  transform: translateY(-15px);
+  transition: all 0.3s ease;
+}
+ 
+.card-accent {
+  height: 4px;
+  width: 60px;
+  background-color: #ff0000;
+  margin-bottom: 20px;
+  border-radius: 2px;
+}
+ 
+  p, ol, dl {
+    max-width: auto;
+    margin: auto;
+    padding: 0 20px;
+  }
+ 
+  img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    width: 130px;
+    height: 130px;
+    border: 5px solid #222
+  }
 
-    body {
-      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
-    }
-
-    .container {
-      display: flex;
-      min-height: 100vh;
-    }
-
-    .side-image {
-      background-color: #144d65;
-      color: white;
-      width: 100px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      writing-mode: vertical-lr;
-      font-size: 1rem;
-      letter-spacing: 1px;
-    }
-
-    .main-content {
-      flex: 1;
-      background-color: #fff;
-      padding: 40px;
-      display: flex;
-      flex-direction: column;
-    }
-
-    header {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    header h1 {
-      font-size: 1.8em;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 10px;
-    }
-
-    nav a {
-      text-decoration: none;
-      color: #144d65;
-      font-weight: 500;
-      transition: color 0.2s ease;
-    }
-
-    nav a:hover {
-      color: #0d2f3f;
-    }
-
-    .card {
-      background: #fff;
-      border: 1px solid #e0e0e0;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 25px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    }
-
-    .intro-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .intro-content .text {
-      flex: 1;
-      min-width: 200px;
-    }
-
-    .photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      border: 2px solid #144d65;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      font-size: 0.85em;
-      margin-top: 10px;
-      margin-left: 20px;
-    }
-
-    h2 {
-      font-size: 1.1em;
-      color: #144d65;
-      margin-bottom: 10px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 5px;
-    }
-
-    p {
-      font-size: 0.95em;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
-
-      .side-image {
-        width: 100%;
-        height: 60px;
-        writing-mode: horizontal-tb;
-      }
-
-      .intro-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .photo {
-        margin-left: 0;
-      }
-
-      nav {
-        flex-wrap: wrap;
-        gap: 10px;
-      }
-    }
-  </style>
+ 
+  table {
+    margin: 30px auto;
+    border-collapse: collapse;
+    width: 45%;
+  }
+ 
+  table, th, td {
+    border: 1px solid #999;
+    padding: 12px;
+    text-align: left;
+  }
+ 
+  pre {
+    background-color: #eee;
+    padding: 15px;
+    border-left: 5px solid #999;
+    width: fit-content;
+    margin: 20px auto;
+    max-width: 90%;
+    font-family: consolas;
+  }
+  a {
+    color: #0077cc;
+    text-decoration: none;
+  }
+ 
+  a:hover {
+    text-decoration: underline;
+  }  
+ 
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="side-image">Image</div>
-
-    <div class="main-content">
-      <header>
-        <h1>Lily Nan</h1>
-        <nav>
-          <a href="#intro">Intro</a>
-          <a href="#experience">Experience</a>
-          <a href="#education">Education</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
-
-      <section id="intro" class="card">
-        <div class="intro-content">
-          <div class="text">
-            <h2>Intro</h2>
-            <p>Some text about me</p>
-          </div>
-          <div class="photo">Photo of Me</div>
-        </div>
-      </section>
-
-      <section id="experience" class="card">
-        <h2>Experience</h2>
-        <p>Text</p>
-      </section>
-
-      <section id="education" class="card">
-        <h2>Education</h2>
-        <p>Text</p>
-      </section>
-
-      <section id="contact" class="card">
-        <h2>Contact</h2>
-        <p>Text</p>
-      </section>
+ <div class="container">
+  <header>
+    <h1>Lily Nan</h1>
+  </header>
+   
+    <hr>
+    <div class="rank-card">
+     <div class="card-accent"></div>
+      <h2>Intro</h2>
+      <img src=
+ 
+    <p>
+      Text
+    </p>
     </div>
-
-    <div class="side-image">Image</div>
-  </div>
+ 
+    
+    <p>You can <a href="mailto:myemail.com?subject=Hi"><b>email me</b></a>.</p>
+ 
+ </div>
 </body>
 </html>
