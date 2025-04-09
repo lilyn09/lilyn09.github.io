@@ -16,36 +16,67 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       font-family: 'Inter', sans-serif;
-      background-color: #f4f4f4;
-      color: #333;
+      background-color: #F7C6D9;
+      color: #4C3A4C;
       line-height: 1.6;
       margin: 0;
       padding: 0;
       position: relative;
     }
 
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-image: url('faint_flower_overlay.png'); /* optional whimsical overlay */
-      opacity: 0.04;
-      pointer-events: none;
-    }
-
     .container {
       max-width: 1200px;
       margin: auto;
-      background-color: white;
+      background-color: rgba(255, 255, 255, 0.9);
       padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(216, 180, 226, 0.15);
     }
 
     header {
-      background-color: #d8b4e2;
-      color: #3d2c3c;
+      background-color: #D8A7CA;
+      color: white;
       padding: 10px 0;
       text-align: center;
       border-radius: 12px;
+    }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: #F3E1F5;
+      padding: 10px 0;
+      text-align: center;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    .navbar ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .navbar li {
+      display: inline-block;
+      margin: 0 15px;
+    }
+
+    .navbar a {
+      font-family: 'Inter', sans-serif;
+      color: #4C3A4C;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1em;
+      transition: color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      color: #8B5E9E;
+      text-decoration: underline;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     h1, h2, h3, h4 {
@@ -57,6 +88,7 @@
       margin-top: 1em;
       text-align: center;
       font-style: italic;
+      font-size: 3em;
     }
 
     h2, h3, h4 {
@@ -66,11 +98,11 @@
     }
 
     .rank-card {
-      background: linear-gradient(135deg, #fff9fc, #f6f2f7);
+      background: linear-gradient(135deg, #FFF9FC, #FDF7FA);
       margin: 60px auto;
       padding: 50px 40px;
       border-radius: 12px;
-      border: 1px solid #eadff0;
+      border: 1px solid #EADFF0;
       box-shadow: 0 10px 20px rgba(216, 180, 226, 0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -83,7 +115,7 @@
     .card-accent {
       height: 4px;
       width: 60px;
-      background-color: #d8b4e2;
+      background-color: #D8A7CA;
       margin-bottom: 10px;
       border-radius: 2px;
       margin-top: -20px;
@@ -100,17 +132,32 @@
       border-radius: 100%;
       width: 140px;
       height: 140px;
-      border: 3px solid #d8b4e2;
+      border: 3px solid #D8A7CA;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
 
     a {
-      color: #a678b7;
+      color: #A678B7;
       text-decoration: none;
     }
 
     a:hover {
-      color: #8b5e9e;
+      color: #8B5E9E;
+      text-decoration: underline;
+    }
+
+    .back-to-top {
+      display: inline-block;
+      margin-top: 20px;
+      font-weight: 600;
+      color: #A678B7;
+      font-size: 1em;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .back-to-top:hover {
+      color: #8B5E9E;
       text-decoration: underline;
     }
 
@@ -132,20 +179,29 @@
 </head>
 <body>
   <div class="container">
-    <header>
+    <header id="top">
       <h1>Lily Nan</h1>
     </header>
 
-    <div class="rank-card">
+    <nav class="navbar">
+      <ul>
+        <li><a href="#intro">Intro</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="rank-card" id="intro">
       <div class="card-accent"></div>
       <h2>Intro</h2>
-      <img src="your_profile_picture.jpg" alt="Lily Nan">
+      <img src="picture_me.jpg" alt="Lily Nan">
       <p>
         Text
       </p>
     </div>
 
-    <div class="rank-card">
+    <div class="rank-card" id="experience">
       <div class="card-accent"></div>
       <h2>Experience</h2>
       <p>
@@ -153,7 +209,7 @@
       </p>
     </div>
 
-    <div class="rank-card">
+    <div class="rank-card" id="education">
       <div class="card-accent"></div>
       <h2>Education</h2>
       <p>
@@ -161,12 +217,16 @@
       </p>
     </div>
 
-    <div class="rank-card">
+    <div class="rank-card" id="contact">
       <div class="card-accent"></div>
       <h2>Contact</h2>
       <p>
-        You can <a href="mailto:myemail.com?subject=Hi"><b>email me</b></a>.
+        You can <a href="mailto:myemail.com?subject=Hi"><b>email me</b></a> here.
       </p>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+      <a href="#top" class="back-to-top">↑ Back to the Top</a>
     </div>
   </div>
 </body>
