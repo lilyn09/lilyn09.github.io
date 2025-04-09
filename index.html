@@ -9,7 +9,7 @@
 
   <style>
     body {
-      background-image: url('wallpaper_3.png');
+      background-image: url('website_wallpaper_2.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -126,10 +126,10 @@
 
     img {
       display: block;
-      margin: 20px auto;
+      margin: 20px 0 20px auto; /* top, right, bottom, left */
       border-radius: 100%;
-      width: 140px;
-      height: 140px;
+      width: 200px; /* make it bigger */
+      height: 200px;
       border: 3px solid #D8A7CA;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
@@ -159,21 +159,50 @@
       text-decoration: underline;
     }
 
-    @media (max-width: 768px) {
-      .container {
-        padding: 10px;
-      }
+    .intro-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      padding: 20px;
+  }
 
-      .rank-card {
-        padding: 30px 20px;
-      }
+     .intro-content p {
+      flex: 1;
+      padding: 0;
+  }
 
-      img {
-        width: 100px;
-        height: 100px;
-      }
-    }
-  </style>
+  .experience-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      padding: 20px;
+  }
+
+     .experience-content p {
+      flex: 1;
+      padding: 0;
+  }
+
+  .education-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 40px;
+      padding: 20px;
+  }
+
+     .education-content p {
+      flex: 1;
+      padding: 0;
+  }
+
+  .education-content img {
+      margin: 0; /* Reset margin for the image */
+  }
+
+ </style>
 </head>
 <body>
   <div class="container">
@@ -186,6 +215,7 @@
         <li><a href="#intro">Intro</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -193,39 +223,93 @@
     <div class="rank-card" id="intro">
       <div class="card-accent"></div>
       <h2>Intro</h2>
-      <img src="picture_me.jpg" alt="Lily Nan">
-      <p>
-        Text
-      </p>
+      <div class="intro-content">
+        <p>
+          Hello, 
+          I'm Lily, an undergraduate Maths student at Cardiff University, currently
+          undertaking a statistical programming placement year at UCB.
+        </p>
+        <img src="picture_me.jpg" alt="Lily Nan" 
+        style="width: 150px; height: 150px; border-radius: 100%; border: 3px 
+        solid #D8A7CA; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+
+      </div>
     </div>
 
-    <div class="rank-card" id="experience">
-      <div class="card-accent"></div>
-      <h2>Experience</h2>
-      <p>
-        Text
-      </p>
+   <div class="rank-card" id="experience">
+    <div class="card-accent"></div>
+    <h2>Experience</h2>
+    <div class="experience-content">
+      <div>
+        <p>
+          <b>Statistical Programming Placement Student</b>
+          <br>
+          <b>UCB</b>
+          <br>
+          <b>(2024-2025)</b>
+          <br><br>
+        </p>
+        <ul>
+          <li>Contributed to open-source and in-house R packages.</li>
+          <li>Programming, documentation, testing</li>
+          <li>ggplot2, dplyr, tidyr</li>
+
+        </ul>
+      </div>
+      <img src="ucb_logo.png" alt="UCB Logo" style="width: 100px; height: 100px; border-radius: 0;">
     </div>
+  </div>
+  
 
     <div class="rank-card" id="education">
       <div class="card-accent"></div>
       <h2>Education</h2>
-      <p>
-        Text
-      </p>
+      <div class="education-content">
+        <p>
+          <b>Cardiff University / Prifysgol Caerdydd</b>
+          <br>
+          <b>Bsc Mathematics, Operational Research, and Statistics (with a placement year)</b>
+          <br>
+          <b>(2022-2026)</b>
+        </p>
+        <img src="uni_logo.png" alt="Cardiff University Logo" style="width: 100px; height: 100px; border-radius: 0;">
+      </div>
+      <ul>
+        <li>Year 1 Modules: Foundations of Mathematics 1 & 2, Computing for Mathematics, 
+          Linear Algebra 1, Probability Theory, Statistical Inference, Geometry, Differential Equations, 
+          Finance 1</li>
+        <li>Year 2 Modules: Linear Algebra 2, Probability and Statistics, Computational Statistics, 
+          Group Theory, Multivariable Calculus, Complex Analysis, Operational Research, 
+          Series and Transforms, Finance 2</li>
+      </ul>
+    </div>
+
+    <div class="rank-card" id="skills">
+      <div class="card-accent"></div>
+      <h2>Skills</h2>
+      <ul>
+        <li>Intermediate R</li>
+        <li>Elementary SQL, HTML, and Python</li>
+      </ul>
     </div>
 
     <div class="rank-card" id="contact">
       <div class="card-accent"></div>
       <h2>Contact</h2>
-      <p>
-        You can <a href="mailto:myemail.com?subject=Hi"><b>email me</b></a> here.
-      </p>
+      <ul>
+        <li>
+          You can <a href="mailto:myemail.com?subject=Hi"><b>email me</b></a> here.
+        </li>
+        <li>
+          Connect with me on <a href="https://uk.linkedin.com/in/lily-n-55b114249"><b>LinkedIn</b></a>.
+        </li>
+      </ul>
     </div>
 
     <div style="text-align: center; margin-top: 40px;">
       <a href="#top" class="back-to-top">↑ Back to the Top</a>
     </div>
+  
   </div>
-</body>
-</html>
+  </body>
+  </html>
