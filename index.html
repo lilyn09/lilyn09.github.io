@@ -5,18 +5,19 @@
     <meta name="description" content="Lily Nan Website">
     <meta name="keywords" content="Lily Nan">
  <style>
-  body {
-    background-image: url('website_wallpaper.jpeg');
-    background-size: cover;
-    background-position: center;
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    font-family: 'Segoe UI';
-  }
+body {
+  background-image: url('website_wallpaper.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
  
   .container {
     max-width: 1200px;
@@ -32,9 +33,14 @@
     text-align: center;
   }
  
- h1, h2, h3, h4 {
+ h1 {
     margin-top: 1em;
     text-align: center;
+ }
+ 
+ h2, h3, h4 {
+    margin-top: 1em;
+    text-align: left;
  
   }
  
@@ -47,7 +53,7 @@
   box-shadow:
     0 2px 10px rgba(0,0,0,0.1),
     0 10px 20px rgba(0,0,0,0.15);
-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
  
 .rank-card:hover {
@@ -55,13 +61,14 @@ transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
  
-.card-accent {
-  height: 4px;
-  width: 60px;
-  background-color: #ff0000;
-  margin-bottom: 20px;
-  border-radius: 2px;
-}
+#.card-accent {
+#  height: 4px;
+#  width: 60px;
+#  background-color: mediumpurple;
+#  margin-bottom: 10px;
+#  border-radius: 2px;
+#  margin-top: -20px
+#}
  
   p, ol, dl {
     max-width: auto;
@@ -78,28 +85,6 @@ transition: all 0.3s ease;
     border: 5px solid #222
   }
 
- 
-  table {
-    margin: 30px auto;
-    border-collapse: collapse;
-    width: 45%;
-  }
- 
-  table, th, td {
-    border: 1px solid #999;
-    padding: 12px;
-    text-align: left;
-  }
- 
-  pre {
-    background-color: #eee;
-    padding: 15px;
-    border-left: 5px solid #999;
-    width: fit-content;
-    margin: 20px auto;
-    max-width: 90%;
-    font-family: consolas;
-  }
   a {
     color: #0077cc;
     text-decoration: none;
@@ -117,7 +102,6 @@ transition: all 0.3s ease;
     <h1>Lily Nan</h1>
   </header>
    
-    <hr>
     <div class="rank-card">
      <div class="card-accent"></div>
       <h2>Intro</h2>
@@ -127,9 +111,35 @@ transition: all 0.3s ease;
       Text
     </p>
     </div>
- 
-    
-    <p>You can <a href="mailto:myemail.com?subject=Hi"><b>email me</b></a>.</p>
+
+      
+      <div class="rank-card">
+       <div class="card-accent"></div>
+        <h2>Experience</h2>
+
+      <p>
+        Text
+      </p>
+      </div>
+
+      <div class="rank-card">
+       <div class="card-accent"></div>
+        <h2>Education</h2>
+
+      <p>
+        Text
+      </p>
+      </div>
+
+      <div class="rank-card">
+       <div class="card-accent"></div>
+        <h2>Contact</h2>
+
+      <p>
+      You can <a href="mailto:myemail.com?subject=Hi"><b>email me</b></a>.
+      </p>
+      </div>
+
  
  </div>
 </body>
