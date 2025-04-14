@@ -5,7 +5,10 @@
   <meta name="description" content="Lily Nan Website">
   <meta name="keywords" content="Lily Nan">
 
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     body {
@@ -60,11 +63,11 @@
     }
 
     .navbar a {
-      font-family: 'Inter', sans-serif;
+      font-family: 'IBM Plex Sans', sans-serif;
       color: #4C3A4C;
       font-weight: 600;
       text-decoration: none;
-      font-size: 1em;
+      font-size: 1.5em;
       transition: color 0.3s ease;
     }
 
@@ -96,19 +99,18 @@
     }
 
     .rank-card {
-      background: linear-gradient(135deg, #FFF9FC, #FDF7FA);
-      margin: 60px auto;
-      padding: 50px 40px;
-      border-radius: 12px;
-      border: 1px solid #EADFF0;
-      box-shadow: 0 10px 20px rgba(216, 180, 226, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+       background-color: #FFF9FC; 
+       margin: 60px auto;
+       padding: 50px 40px;
+       border-radius: 12px;
+       border: 1px solid #EADFF0;
+       box-shadow: 0 10px 20px rgba(216, 180, 226, 0.2);
+       transition: background-color 0.3s ease;
     }
 
     .rank-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(216, 180, 226, 0.25);
-    }
+        background-color: #F0E2F3;
+    } 
 
     .card-accent {
       height: 4px;
@@ -165,43 +167,84 @@
       align-items: center;
       gap: 40px;
       padding: 20px;
-  }
+    }
 
-     .intro-content p {
-      flex: 1;
+    .intro-content p {
+      flex: 2;
+      margin-top: 0;
       padding: 0;
-  }
+    }
 
-  .experience-content {
+    .intro-content img {
+      flex: 0 0 130px;
+      width: 130px;
+      height: 130px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 0;
+      aspect-ratio: 1/1;
+    }
+
+    .experience-content {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 40px;
       padding: 20px;
-  }
+    }
 
-     .experience-content p {
+    .experience-content div {
       flex: 1;
-      padding: 0;
-  }
+    }
 
-  .education-content {
+    .experience-content p {
+      padding: 0;
+      margin: 0;
+    }
+
+    .education-content {
       display: flex;
       flex-direction: row;
       align-items: center;
       gap: 40px;
       padding: 20px;
-  }
+    }
 
-     .education-content p {
+    .education-content p {
       flex: 1;
       padding: 0;
-  }
+      margin: 0;
+    }
 
-  .education-content img {
-      margin: 0; 
+    .education-content img {
+      margin: 0;
+    }
 
- </style>
+    .logo-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 0;
+      border: 3px solid #D8A7CA;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-links {
+      display: flex;
+      gap: 20px;
+      padding: 0 20px;
+      list-style-type: none;
+    }
+
+    .contact-links li a {
+      font-size: 1.5em;
+      color: #A678B7;
+      transition: color 0.3s ease;
+    }
+
+    .contact-links li a:hover {
+      color: #8B5E9E;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
@@ -219,46 +262,43 @@
       </ul>
     </nav>
 
-    <div class="rank-card" id="intro">
+    <div class="rank-card intro-card" id="intro">
       <div class="card-accent"></div>
       <h2>Intro</h2>
       <div class="intro-content">
         <p>
-          Hello, 
-          I'm Lily, an undergraduate Maths student at Cardiff University, currently
+          Hello, I'm Lily! 
+          <br>
+          <br>
+          I am an undergraduate Maths student at Cardiff University, currently
           undertaking a statistical programming placement year at UCB.
         </p>
-        <img src="picture_me.jpg" alt="Lily Nan" 
-        style="width: 150px; height: 150px; border-radius: 100%; border: 3px 
-        solid #D8A7CA; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-
+        <img src="picture_me.jpg" alt="Lily Nan">
       </div>
     </div>
 
-   <div class="rank-card" id="experience">
-    <div class="card-accent"></div>
-    <h2>Experience</h2>
-    <div class="experience-content">
-      <div>
-        <p>
-          <b>Statistical Programming Placement Student</b>
-          <br>
-          <b>UCB</b>
-          <br>
-          <b>(2024-2025)</b>
-          <br><br>
-        </p>
-        <ul>
-          <li>Contributed to open-source and in-house R packages.</li>
-          <li>Programming, documentation, testing</li>
-          <li>ggplot2, dplyr, tidyr</li>
-
-        </ul>
+    <div class="rank-card" id="experience">
+      <div class="card-accent"></div>
+      <h2>Experience</h2>
+      <div class="experience-content">
+        <div>
+          <p>
+            <b>Statistical Programming Placement Student</b>
+            <br>
+            <b>UCB</b>
+            <br>
+            <b>(2024-2025)</b>
+            <br><br>
+          </p>
+          <ul>
+            <li>Contributed to open-source and in-house R packages.</li>
+            <li>Programming, documentation, testing</li>
+            <li>Prepared and delivered regular presentations to audiences of up to 40 people.</li>
+          </ul>
+        </div>
+        <img src="ucb_logo.png" alt="UCB Logo" class="logo-img">
       </div>
-      <img src="ucb_logo.png" alt="UCB Logo" style="width: 100px; height: 100px; border-radius: 0;">
     </div>
-  </div>
-  
 
     <div class="rank-card" id="education">
       <div class="card-accent"></div>
@@ -271,36 +311,67 @@
           <br>
           <b>(2022-2026)</b>
         </p>
-        <img src="uni_logo.png" alt="Cardiff University Logo" style="width: 100px; height: 100px; border-radius: 0;">
+        <img src="uni_logo.png" alt="Cardiff University Logo" class="logo-img">
       </div>
       <ul>
-        <li>Year 1 Modules: Foundations of Mathematics 1 & 2, Computing for Mathematics, 
+        <li><b>Year 1 Modules</b>: Foundations of Mathematics 1 & 2, Computing for Mathematics, 
           Linear Algebra 1, Probability Theory, Statistical Inference, Geometry, Differential Equations, 
           Finance 1</li>
-        <li>Year 2 Modules: Linear Algebra 2, Probability and Statistics, Computational Statistics, 
+        <li><b>Year 2 Modules</b>: Linear Algebra 2, Probability and Statistics, Computational Statistics, 
           Group Theory, Multivariable Calculus, Complex Analysis, Operational Research, 
           Series and Transforms, Finance 2</li>
+        <li><b>Year 3 Modules</b>: 13 month Industrial Placement, including a self-directed research project.</li>
       </ul>
     </div>
 
     <div class="rank-card" id="skills">
       <div class="card-accent"></div>
       <h2>Skills</h2>
-      <ul>
-        <li>Intermediate R</li>
-        <li>Elementary SQL, HTML, and Python</li>
-      </ul>
+      <div class="skills">
+        <p><b>Programming and Data Analysis</b></p>
+        <ul>
+          <li>R: package development, data visualization, statistical analysis (tidyverse, shiny, etc.)</li>
+          <li>Python: building libraries, matplotlib, sympy</li>
+        </ul>
+
+        <p><b>Web Development</b></p>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+        </ul>
+
+        <p><b>Database Management</b></p>
+        <ul>
+          <li>SQL</li>
+        </ul>
+
+        <p><b>Version Control and Collaboration</b></p>
+        <ul>
+          <li>Git, GitHub</li>
+          <li>Agile and Scrum methodologies</li>
+        </ul>
+
+        <p><b>Technical Writing</b></p>
+        <ul>
+          <li>LaTeX: academic papers</li>
+          <li>R Markdown: dynamic reports</li>
+        </ul>
+      </div>
     </div>
 
     <div class="rank-card" id="contact">
       <div class="card-accent"></div>
       <h2>Contact</h2>
-      <ul>
+      <ul class="contact-links">
         <li>
-          You can <a href="mailto:lilynan51@gmail.com?subject=Hi"><b>email me</b></a> here.
+          <a href="mailto:lilynan51@gmail.com?subject=Hi" title="Email Me">
+            <i class="fas fa-envelope"></i>
+          </a>  
         </li>
         <li>
-          Connect with me on <a href="https://uk.linkedin.com/in/lily-n-55b114249"><b>LinkedIn</b></a>.
+          <a href="https://uk.linkedin.com/in/lily-n-55b114249" title="LinkedIn" target="_blank">
+            <i class="fab fa-linkedin"></i>
+          </a>
         </li>
       </ul>
     </div>
@@ -308,7 +379,6 @@
     <div style="text-align: center; margin-top: 40px;">
       <a href="#top" class="back-to-top">↑ Back to the Top</a>
     </div>
-  
   </div>
-  </body>
-  </html>
+</body>
+</html>
