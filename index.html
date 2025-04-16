@@ -1,9 +1,11 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
-  <title>Lily Nan Website</title>
-  <meta name="description" content="Lily Nan Website">
-  <meta name="keywords" content="Lily Nan">
+  <title>Lily Nan | Statistical Programmer</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Lily Nan - Statistical Programmer & Mathematics Student">
+  <meta name="keywords" content="Lily Nan, Statistics, R Programming, Data Analysis, Mathematics">
 
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
@@ -11,6 +13,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    :root {
+      --primary-color: #A678B7;
+      --primary-dark: #8B5E9E;
+      --accent-color: #D8A7CA;
+      --accent-light: #F3E1F5;
+      --bg-color: #FFF9FC;
+      --text-color: #4C3A4C;
+      --border-radius: 12px;
+      --box-shadow: 0 4px 20px rgba(216, 180, 226, 0.15);
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       background-image: url('wallpaper_5.png');
       background-size: cover;
@@ -19,75 +39,94 @@
       background-attachment: fixed;
       font-family: 'Inter', sans-serif;
       background-color: #F7C6D9;
-      color: #4C3A4C;
+      color: var(--text-color);
       line-height: 1.6;
       margin: 0;
       padding: 0;
       position: relative;
+      scroll-behavior: smooth;
     }
 
     .container {
       max-width: 1200px;
-      margin: auto;
-      background-color: rgba(255, 255, 255, 0.9);
+      margin: 2rem auto;
+      background-color: rgba(255, 255, 255, 0.95);
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(216, 180, 226, 0.15);
+      border-radius: var(--border-radius);
+      box-shadow: var(--box-shadow);
     }
 
     header {
-      background-color: #D8A7CA;
+      background-color: var(--accent-color);
       color: white;
-      padding: 10px 0;
+      padding: 20px 0;
       text-align: center;
-      border-radius: 12px;
+      border-radius: var(--border-radius);
+      transition: background-color var(--transition-speed) ease;
     }
 
     header:hover {
-        background-color: #F3E1F5; 
-        transition: background-color 0.3s ease;
-     }
+      background-color: var(--accent-light);
+    }
 
     .navbar {
-      background-color: #F3E1F5;
-      padding: 10px 0;
+      background-color: var(--accent-light);
+      padding: 15px 0;
       text-align: center;
-      border-radius: 12px;
+      border-radius: var(--border-radius);
       margin: 20px 0;
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: all var(--transition-speed) ease;
     }
 
     .navbar:hover {
-      background-color: #E2B3D8; 
-      transition: background-color 0.3s ease;
+      background-color: var(--accent-color);
     }
 
     .navbar ul {
       list-style: none;
       padding: 0;
       margin: 0;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
     }
 
     .navbar li {
-      display: inline-block;
       margin: 0 15px;
+      padding: 5px 0;
     }
 
     .navbar a {
       font-family: 'IBM Plex Sans', sans-serif;
-      color: #4C3A4C;
+      color: var(--text-color);
       font-weight: 600;
       text-decoration: none;
-      font-size: 1.5em;
-      transition: color 0.3s ease;
+      font-size: 1.2em;
+      transition: all var(--transition-speed) ease;
+      position: relative;
     }
 
-    .navbar a:hover {
-      color: #8B5E9E;
-      text-decoration: underline;
+    .navbar a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: var(--primary-dark);
+      transition: width var(--transition-speed) ease;
     }
 
-    html {
-      scroll-behavior: smooth;
+    .navbar a:hover::after {
+      width: 100%;
+    }
+
+    .navbar:hover a {
+      color: white;
     }
 
     h1, h2, h3, h4 {
@@ -96,10 +135,11 @@
     }
 
     h1 {
-      margin-top: 1em;
+      margin-top: 0.5em;
       text-align: center;
       font-style: italic;
       font-size: 3em;
+      transition: color var(--transition-speed) ease;
     }
 
     h2, h3, h4 {
@@ -109,71 +149,97 @@
     }
 
     header:hover h1 {
-      color: black;
-      transition: color 0.3s ease;
+      color: var(--text-color);
     }
 
     .rank-card {
-       background-color: #FFF9FC; 
-       margin: 60px auto;
-       padding: 50px 40px;
-       border-radius: 12px;
-       border: 1px solid #EADFF0;
-       box-shadow: 0 10px 20px rgba(216, 180, 226, 0.2);
-       transition: background-color 0.3s ease;
+      background-color: var(--bg-color);
+      margin: 60px auto;
+      padding: 50px 40px;
+      border-radius: var(--border-radius);
+      border: 1px solid #EADFF0;
+      box-shadow: 0 10px 20px rgba(216, 180, 226, 0.2);
+      transition: all var(--transition-speed) ease;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: fadeIn 0.8s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .rank-card:hover {
-        background-color: #F0E2F3;
-    } 
+      background-color: #F0E2F3;
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(216, 180, 226, 0.3);
+    }
 
     .card-accent {
       height: 4px;
       width: 60px;
-      background-color: #D8A7CA;
-      margin-bottom: 10px;
+      background-color: var(--accent-color);
+      margin-bottom: 15px;
       border-radius: 2px;
       margin-top: -20px;
+      transition: width var(--transition-speed) ease;
+    }
+
+    .rank-card:hover .card-accent {
+      width: 100px;
     }
 
     p, ol, dl {
-      margin: auto;
+      margin: 1em auto;
       padding: 0 20px;
     }
 
-    img {
+    img.profile-img {
       display: block;
-      margin: 20px 0 20px auto; 
-      border-radius: 100%;
-      width: 200px; 
+      margin: 20px 0;
+      border-radius: 50%;
+      width: 200px;
       height: 200px;
-      border: 3px solid #D8A7CA;
+      border: 3px solid var(--accent-color);
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform var(--transition-speed) ease;
+      object-fit: cover;
+    }
+
+    img.profile-img:hover {
+      transform: scale(1.05);
     }
 
     a {
-      color: #A678B7;
+      color: var(--primary-color);
       text-decoration: none;
+      transition: color var(--transition-speed) ease;
     }
 
     a:hover {
-      color: #8B5E9E;
-      text-decoration: underline;
+      color: var(--primary-dark);
     }
 
     .back-to-top {
       display: inline-block;
       margin-top: 20px;
       font-weight: 600;
-      color: #A678B7;
+      color: var(--primary-color);
       font-size: 1em;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: all var(--transition-speed) ease;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background-color: var(--accent-light);
     }
 
     .back-to-top:hover {
-      color: #8B5E9E;
-      text-decoration: underline;
+      color: white;
+      background-color: var(--primary-color);
+      transform: translateY(-3px);
     }
 
     .intro-content {
@@ -188,22 +254,29 @@
       flex: 2;
       margin-top: 0;
       padding: 0;
+      font-size: 1.1em;
+      line-height: 1.8;
     }
 
     .intro-content img {
-      flex: 0 0 130px;
-      width: 130px;
-      height: 130px;
+      flex: 0 0 150px;
+      width: 150px;
+      height: 150px;
       object-fit: cover;
       border-radius: 50%;
       margin: 0;
       aspect-ratio: 1/1;
+      transition: transform var(--transition-speed) ease;
+    }
+
+    .intro-content img:hover {
+      transform: scale(1.1) rotate(5deg);
     }
 
     .experience-content {
       display: flex;
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       gap: 40px;
       padding: 20px;
     }
@@ -214,7 +287,15 @@
 
     .experience-content p {
       padding: 0;
-      margin: 0;
+      margin: 0 0 1em 0;
+    }
+
+    .experience-content ul {
+      margin-left: 20px;
+    }
+
+    .experience-content li {
+      margin-bottom: 0.5em;
     }
 
     .education-content {
@@ -231,33 +312,160 @@
       margin: 0;
     }
 
-    .education-content img {
-      margin: 0;
+    .logo-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 10px;
+      border: 3px solid var(--accent-color);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: transform var(--transition-speed) ease;
+      object-fit: contain;
+      background-color: white;
+      padding: 10px;
     }
 
-    .logo-img {
-      width: 100px;
-      height: 100px;
-      border-radius: 0;
-      border: 3px solid #D8A7CA;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    .logo-img:hover {
+      transform: scale(1.05);
     }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .skill-category {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      transition: transform var(--transition-speed) ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-5px);
+    }
+
+    .skill-category h3 {
+      color: var(--primary-color);
+      margin-top: 0;
+      border-bottom: 2px solid var(--accent-light);
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .skill-category ul {
+      list-style-type: none;
+    }
+
+    .skill-category li {
+      padding: 5px 0;
+      position: relative;
+      padding-left: 25px;
+    }
+
+    .skill-category li:before {
+      content: "•";
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.2em;
+      position: absolute;
+      left: 0;
+    }
+
+
 
     .contact-links {
       display: flex;
-      gap: 20px;
-      padding: 0 20px;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px;
       list-style-type: none;
     }
 
     .contact-links li a {
-      font-size: 1.5em;
-      color: #A678B7;
-      transition: color 0.3s ease;
+      font-size: 2em;
+      color: var(--primary-color);
+      transition: all var(--transition-speed) ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .contact-links li a span {
+      font-size: 0.5em;
+      font-weight: 500;
     }
 
     .contact-links li a:hover {
-      color: #8B5E9E;
+      color: var(--primary-dark);
+      transform: translateY(-5px);
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding: 20px;
+      border-top: 1px solid var(--accent-light);
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 768px) {
+      .container {
+        margin: 1rem;
+        padding: 15px;
+      }
+
+      .intro-content, .experience-content, .education-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .experience-content {
+        text-align: left;
+      }
+
+      .intro-content img {
+        margin: 20px auto;
+      }
+
+      .logo-img {
+        margin: 20px auto;
+      }
+
+      .skills-grid, .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .navbar li {
+        margin: 0 10px;
+      }
+
+      .navbar a {
+        font-size: 1em;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      .rank-card {
+        padding: 30px 20px;
+      }
+    }
+
+    /* Animation for scroll reveal */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
   </style>
 </head>
@@ -277,22 +485,24 @@
       </ul>
     </nav>
 
-    <div class="rank-card intro-card" id="intro">
+    <div class="rank-card animate-on-scroll" id="intro">
       <div class="card-accent"></div>
       <h2>Intro</h2>
       <div class="intro-content">
         <p>
-          Hello, I'm Lily! 
-          <br>
-          <br>
-          I am an undergraduate Maths student at Cardiff University, currently
-          undertaking a statistical programming placement year at UCB.
+          Hello, I'm Lily! 👋
+          <br><br>
+          I'm a Mathematics student at Cardiff University. 
+          <br><br>
+          I'm currently on a placement year at UCB working as 
+          a statistical programmer.
+
         </p>
-        <img src="picture_me.jpg" alt="Lily Nan">
+        <img src="picture_me.jpg" alt="Lily Nan" class="profile-img">
       </div>
     </div>
 
-    <div class="rank-card" id="experience">
+    <div class="rank-card animate-on-scroll" id="experience">
       <div class="card-accent"></div>
       <h2>Experience</h2>
       <div class="experience-content">
@@ -303,33 +513,32 @@
             <b>UCB</b>
             <br>
             <b>(2024-2025)</b>
-            <br><br>
           </p>
           <ul>
-            <li>Developed and maintained open-source and in-house R packages.</li>
-            <li>Contributed to end-to-end R package development, including designing package architecture,
-               writing efficient R code, writing comprehensive documentation and vignettes, 
+            <li>Developed and maintained open-source and in-house R packages, contributing to pharmaceutical statistical analysis workflows.</li>
+            <li>Led end-to-end R package development, including designing package architecture,
+               writing efficient R code, creating comprehensive documentation and vignettes, 
                and implementing unit testing.</li>
-            <li>Prepared and delivered impactful presentations to  both technical and non-technical
-              audiences of up to 50 people.</li>
-            <li>Researched, assessed, and wrote reports for various R packages and frameworks.</li>
-            <li>Assisted with the recruitment processes for the next cohort of placement students and 
-              apprentices.</li> 
-            <li>Faciliated a work shadowing opportunity for university students.</li>
+            <li>Delivered impactful presentations to both technical and non-technical
+              audiences of up to 50 people, demonstrating data visualization techniques and statistical findings.</li>
+            <li>Conducted research and assessment of various R packages and frameworks, producing detailed technical reports to guide team decisions.</li>
+            <li>Participated actively in the recruitment processes for the next cohort of placement students and 
+              apprentices, helping identify talented candidates.</li> 
+            <li>Facilitated work shadowing opportunities for university students, providing mentorship and guidance on statistical programming career paths.</li>
           </ul>
         </div>
         <img src="ucb_logo.png" alt="UCB Logo" class="logo-img">
       </div>
     </div>
 
-    <div class="rank-card" id="education">
+    <div class="rank-card animate-on-scroll" id="education">
       <div class="card-accent"></div>
       <h2>Education</h2>
       <div class="education-content">
         <p>
           <b>Cardiff University / Prifysgol Caerdydd</b>
           <br>
-          <b>Bsc Mathematics, Operational Research, and Statistics (with a placement year)</b>
+          <b>BSc Mathematics, Operational Research, and Statistics (with a placement year)</b>
           <br>
           <b>(2022-2026)</b>
         </p>
@@ -346,53 +555,96 @@
       </ul>
     </div>
 
-    <div class="rank-card" id="skills">
+    <div class="rank-card animate-on-scroll" id="skills">
       <div class="card-accent"></div>
       <h2>Skills</h2>
-      <div class="skills">
-        <p><b>Programming and Data Analysis</b></p>
-        <ul>
-          <li>R: package development, data visualisation, statistical analysis (tidyverse, shiny, etc.)</li>
-          <li>Python: building libraries, matplotlib, sympy</li>
-        </ul>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Programming & Data Analysis</h3>
+          <ul>
+            <li>R
+              <ul>
+                <li>Package development</li>
+                <li>Tidyverse ecosystem</li>
+                <li>Shiny apps</li>
+              </ul>
+            </li>
+            <li>Python
+              <ul>
+                <li>Matplotlib, sympy</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Web Development</h3>
+          <ul>
+            <li>HTML & CSS</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Database Management</h3>
+          <ul>
+            <li>SQL</li>
 
-        <p><b>Web Development</b></p>
-        <ul>
-          <li>HTML</li>
-          <li>CSS</li>
-        </ul>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Version Control</h3>
+          <ul>
+            <li>Git</li>
+            <li>GitHub</li>
+            <li>Agile methodologies</li>
+            <li>Scrum practices</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Technical Writing</h3>
+          <ul>
+            <li>LaTeX</li>
+            <li>R Markdown reports</li>
+            <li>Roxygen documentation</li>
+            <li>Package vignettes</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Soft Skills</h3>
+          <ul>
+            <li>Presentations</li>
+            <li>Team collaboration</li>
 
-        <p><b>Database Management</b></p>
-        <ul>
-          <li>SQL</li>
-        </ul>
-
-        <p><b>Version Control and Collaboration</b></p>
-        <ul>
-          <li>Git, GitHub</li>
-          <li>Agile and Scrum methodologies</li>
-        </ul>
-
-        <p><b>Technical Writing</b></p>
-        <ul>
-          <li>LaTeX: academic papers</li>
-          <li>R Markdown: dynamic reports</li>
-        </ul>
+          </ul>
+        </div>
       </div>
     </div>
 
-    <div class="rank-card" id="contact">
+
+
+    <div class="rank-card animate-on-scroll" id="contact">
       <div class="card-accent"></div>
       <h2>Contact</h2>
       <ul class="contact-links">
         <li>
           <a href="mailto:lilynan51@gmail.com?subject=Hi" title="Email Me">
             <i class="fas fa-envelope"></i>
+            <span>Email</span>
           </a>  
         </li>
         <li>
           <a href="https://uk.linkedin.com/in/lily-n-55b114249" title="LinkedIn" target="_blank">
             <i class="fab fa-linkedin"></i>
+            <span>LinkedIn</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/lilyn09" title="GitHub" target="_blank">
+            <i class="fab fa-github"></i>
+            <span>GitHub</span>
           </a>
         </li>
       </ul>
@@ -402,10 +654,63 @@
       <a href="#top" class="back-to-top">↑ Back to the Top</a>
     </div>
 
-    <footer style="text-align: center; margin-top: 40px;">
-      <p>&copy; 2025 Lily Nan.</p>
+    <footer>
+      <p>&copy; 2025 Lily Nan. All rights reserved.</p>
     </footer>
 
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const animatedElements = document.querySelectorAll('.animate-on-scroll');
+      
+      function checkInView() {
+        animatedElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('visible');
+          }
+        });
+      }
+      
+      checkInView();
+      
+      window.addEventListener('scroll', checkInView);
+      
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          
+          const targetId = this.getAttribute('href');
+          const targetElement = document.querySelector(targetId);
+          
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 100,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+   
+      const navbar = document.querySelector('.navbar');
+      
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+          navbar.style.backgroundColor = '#D8A7CA';
+          navbar.querySelectorAll('a').forEach(link => {
+            link.style.color = 'white';
+          });
+        } else {
+          navbar.style.backgroundColor = '#F3E1F5';
+          navbar.querySelectorAll('a').forEach(link => {
+            link.style.color = '#4C3A4C';
+          });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
