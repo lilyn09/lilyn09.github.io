@@ -13,6 +13,24 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    header h1 {
+      background: linear-gradient(90deg, white, black, white);
+      background-size: 200%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: monochromeShine 12s infinite linear;
+    }
+
+    @keyframes monochromeShine {
+      0% {
+        background-position: -100% 0;
+      }
+      100% {
+        background-position: 200% 0;
+      }
+    }
+    
     :root {
       --primary-color: #A678B7;
       --primary-dark: #8B5E9E;
@@ -493,7 +511,6 @@
           <br><br>
           I'm currently on a placement year at UCB working as 
           a statistical programmer.
-
         </p>
         <img src="picture_me.jpg" alt="Lily Nan" class="profile-img">
       </div>
@@ -586,7 +603,6 @@
           <h3>Database Management</h3>
           <ul>
             <li>SQL</li>
-
           </ul>
         </div>
         
@@ -615,13 +631,10 @@
           <ul>
             <li>Presentations</li>
             <li>Team collaboration</li>
-
           </ul>
         </div>
       </div>
     </div>
-
-
 
     <div class="rank-card animate-on-scroll" id="contact">
       <div class="card-accent"></div>
@@ -655,7 +668,6 @@
     <footer>
       <p>&copy; 2025 Lily Nan. All rights reserved.</p>
     </footer>
-
   </div>
 
   <script>
