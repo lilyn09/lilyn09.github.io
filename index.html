@@ -40,7 +40,7 @@
       --border-radius: 12px;
       --box-shadow: 0 4px 20px var(--shadow-color);
       --transition-speed: 0.3s;
-    }
+    } 
 
     header h1 {
       background: linear-gradient(90deg, 
@@ -378,7 +378,8 @@
       background-color: var(--text-light);
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      border-left: 4px solid var(--accent-color);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       transition: transform var(--transition-speed) ease;
     }
 
@@ -396,15 +397,25 @@
 
     .skill-category ul, .module-category ul {
       list-style-type: none;
+      margin-left: 0;
+      padding-left: 0;
     }
 
-    .skill-category li, .module-category li {
-      padding: 5px 0;
+    .module-items-grid, .skill-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .module-item, .skill-item {
       position: relative;
       padding-left: 25px;
+      padding-bottom: 5px;
+      display: flex;
+      align-items: center;
     }
 
-    .skill-category li:before, .module-category li:before {
+    .module-item:before, .skill-item:before {
       content: "•";
       color: var(--accent-color);
       font-weight: bold;
@@ -413,33 +424,39 @@
       left: 0;
     }
 
-    .module-category {
-      margin-bottom: 15px;
-      background-color: white;
-      border-left: 4px solid var(--accent-color);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    /* New module grid styling */
-    .module-items-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
-    }
-
-    .module-item {
+    .skill-category > ul > li {
       position: relative;
       padding-left: 25px;
       padding-bottom: 5px;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
+      flex-direction: column;
     }
 
-    .module-item:before {
+    .skill-category > ul > li:before {
       content: "•";
       color: var(--accent-color);
       font-weight: bold;
       font-size: 1.2em;
+      position: absolute;
+      left: 0;
+      top: 2px;
+    }
+
+    .skill-category li ul {
+      margin-top: 5px;
+      padding-left: 10px;
+      width: 100%;
+    }
+
+    .skill-category li ul li {
+      padding-left: 20px;
+      position: relative;
+    }
+
+    .skill-category li ul li:before {
+      content: "◦";
+      font-size: 1em;
       position: absolute;
       left: 0;
     }
@@ -506,7 +523,7 @@
         grid-template-columns: 1fr;
       }
 
-      .module-items-grid {
+      .module-items-grid, .skill-items-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -525,12 +542,11 @@
       .rank-card {
         padding: 30px 20px;
       }
-      
-      /* For very small screens, make module items single column */
-      @media screen and (max-width: 480px) {
-        .module-items-grid {
-          grid-template-columns: 1fr;
-        }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .module-items-grid, .skill-items-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -569,9 +585,10 @@
         <p>
           Hello, I'm Lily! 👋
           <br><br>
-          I'm a Mathematics student at Cardiff University. 
+          I'm studying for a Bsc in Mathematics, Operational Research,
+          and Statistics at Cardiff University.
           <br><br>
-          I'm currently on a placement year at UCB working as 
+          Currently, I'm on a placement year at UCB working as 
           a statistical programmer.
         </p>
         <img src="picture_me.jpg" alt="Lily Nan" class="profile-img">
@@ -671,64 +688,58 @@
       <div class="skills-grid">
         <div class="skill-category">
           <h3>Programming & Data Analysis</h3>
-          <ul>
-            <li>R
-              <ul>
-                <li>Package development</li>
-                <li>Tidyverse ecosystem</li>
-                <li>Shiny apps</li>
-              </ul>
-            </li>
-            <li>Python
-              <ul>
-                <li>Matplotlib, sympy</li>
-              </ul>
-            </li>
-          </ul>
+          <div class="skill-items-grid">
+            <div class="skill-item">R</div>
+            <div class="skill-item">Package development</div>
+            <div class="skill-item">Tidyverse ecosystem</div>
+            <div class="skill-item">Shiny apps</div>
+            <div class="skill-item">Python</div>
+            <div class="skill-item">Matplotlib, sympy</div>
+          </div>
         </div>
         
         <div class="skill-category">
           <h3>Web Development</h3>
-          <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-          </ul>
+          <div class="skill-items-grid">
+            <div class="skill-item">HTML</div>
+            <div class="skill-item">CSS</div>
+            <div class="skill-item">JavaScript</div>
+          </div>
         </div>
         
         <div class="skill-category">
           <h3>Database Management</h3>
-          <ul>
-            <li>SQL</li>
-          </ul>
+          <div class="skill-items-grid">
+            <div class="skill-item">SQL</div>
+          </div>
         </div>
         
         <div class="skill-category">
           <h3>Collaboration & Version Control</h3>
-          <ul>
-            <li>Git</li>
-            <li>GitHub</li>
-            <li>Agile methodologies</li>
-            <li>Scrum practices</li>
-          </ul>
+          <div class="skill-items-grid">
+            <div class="skill-item">Git</div>
+            <div class="skill-item">GitHub</div>
+            <div class="skill-item">Agile methodologies</div>
+            <div class="skill-item">Scrum practices</div>
+          </div>
         </div>
         
         <div class="skill-category">
           <h3>Technical Writing</h3>
-          <ul>
-            <li>LaTeX</li>
-            <li>R Markdown reports</li>
-            <li>Roxygen documentation</li>
-            <li>Package vignettes</li>
-          </ul>
+          <div class="skill-items-grid">
+            <div class="skill-item">LaTeX</div>
+            <div class="skill-item">R Markdown reports</div>
+            <div class="skill-item">Roxygen documentation</div>
+            <div class="skill-item">Package vignettes</div>
+          </div>
         </div>
         
         <div class="skill-category">
           <h3>Soft Skills</h3>
-          <ul>
-            <li>Presentations</li>
-            <li>Team collaboration</li>
-          </ul>
+          <div class="skill-items-grid">
+            <div class="skill-item">Presentations</div>
+            <div class="skill-item">Team collaboration</div>
+          </div>
         </div>
       </div>
     </div>
