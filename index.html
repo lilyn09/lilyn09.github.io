@@ -13,8 +13,40 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
+    :root {
+      --primary-color: #A678B7;
+      --primary-dark: #8B5E9E;
+      --accent-color: #D8A7CA;
+      --accent-light: #F3E1F5;
+      --bg-color: #FFF9FC;
+      --text-color: #4C3A4C;
+
+      --bg-gradient-start: white;
+      --bg-gradient-middle: black;
+      --bg-gradient-end: white;
+      --background-main: #F7C6D9;
+      
+      --text-light: white;
+      --text-dark: #4C3A4C;
+      
+      --border-color: #EADFF0;
+      
+      --shadow-color: rgba(216, 180, 226, 0.15);
+      --shadow-color-medium: rgba(216, 180, 226, 0.2);
+      --shadow-color-strong: rgba(216, 180, 226, 0.3);
+      --shadow-color-accent: rgba(166, 120, 183, 0.3);
+      --shadow-common: rgba(0, 0, 0, 0.1);
+      
+      --border-radius: 12px;
+      --box-shadow: 0 4px 20px var(--shadow-color);
+      --transition-speed: 0.3s;
+    }
+
     header h1 {
-      background: linear-gradient(90deg, white, black, white);
+      background: linear-gradient(90deg, 
+                  var(--bg-gradient-start), 
+                  var(--bg-gradient-middle), 
+                  var(--bg-gradient-end));
       background-size: 200%;
       background-clip: text;
       -webkit-background-clip: text;
@@ -31,18 +63,6 @@
       }
     }
     
-    :root {
-      --primary-color: #A678B7;
-      --primary-dark: #8B5E9E;
-      --accent-color: #D8A7CA;
-      --accent-light: #F3E1F5;
-      --bg-color: #FFF9FC;
-      --text-color: #4C3A4C;
-      --border-radius: 12px;
-      --box-shadow: 0 4px 20px rgba(216, 180, 226, 0.15);
-      --transition-speed: 0.3s;
-    }
-
     * {
       box-sizing: border-box;
       margin: 0;
@@ -56,7 +76,7 @@
       background-repeat: no-repeat;
       background-attachment: fixed;
       font-family: 'Inter', sans-serif;
-      background-color: #F7C6D9;
+      background-color: var(--background-main);
       color: var(--text-color);
       line-height: 1.6;
       margin: 0;
@@ -75,9 +95,9 @@
     }
 
     header {
-      box-shadow: 0 6px 25px rgba(216, 180, 226, 0.3);
+      box-shadow: 0 6px 25px var(--shadow-color-strong);
       background-color: var(--accent-color);
-      color: white;
+      color: var(--text-light);
       padding: 20px 0;
       text-align: center;
       border-radius: var(--border-radius);
@@ -97,7 +117,7 @@
       position: sticky;
       top: 10px;
       z-index: 100;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px var(--shadow-common);
       transition: all var(--transition-speed) ease;
     }
 
@@ -145,7 +165,7 @@
     }
 
     .navbar:hover a {
-      color: white;
+      color: var(--text-light);
     }
 
     h1, h2, h3, h4 {
@@ -176,8 +196,8 @@
       margin: 60px auto;
       padding: 50px 40px;
       border-radius: var(--border-radius);
-      border: 1px solid #EADFF0;
-      box-shadow: 0 10px 20px rgba(216, 180, 226, 0.2);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 10px 20px var(--shadow-color-medium);
       transition: all var(--transition-speed) ease;
       transform: translateY(20px);
       opacity: 0;
@@ -194,7 +214,7 @@
     .rank-card:hover {
       background-color: var(--accent-light);
       transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(166, 120, 183, 0.3);
+      box-shadow: 0 15px 30px var(--shadow-color-accent);
     }
 
     .card-accent {
@@ -223,7 +243,7 @@
       width: 200px;
       height: 200px;
       border: 3px solid var(--accent-color);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px var(--shadow-common);
       transition: transform var(--transition-speed) ease;
       object-fit: cover;
     }
@@ -256,7 +276,7 @@
     }
 
     .back-to-top:hover {
-      color: white;
+      color: var(--text-light);
       background-color: var(--primary-color);
       transform: translateY(-3px);
     }
@@ -336,10 +356,10 @@
       height: 120px;
       border-radius: 10px;
       border: 3px solid var(--accent-color);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px var(--shadow-common);
       transition: transform var(--transition-speed) ease;
       object-fit: contain;
-      background-color: white;
+      background-color: var(--text-light);
       padding: 10px;
     }
 
@@ -347,26 +367,26 @@
       transform: scale(1.05);
     }
 
-    .skills-grid {
+    .skills-grid, .modules-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
       gap: 20px;
       padding: 20px;
     }
 
-    .skill-category {
-      background-color: white;
+    .skill-category, .module-category {
+      background-color: var(--text-light);
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       transition: transform var(--transition-speed) ease;
     }
 
-    .skill-category:hover {
+    .skill-category:hover, .module-category:hover {
       transform: translateY(-5px);
     }
 
-    .skill-category h3 {
+    .skill-category h3, .module-category h3 {
       color: var(--primary-color);
       margin-top: 0;
       border-bottom: 2px solid var(--accent-light);
@@ -374,17 +394,48 @@
       margin-bottom: 15px;
     }
 
-    .skill-category ul {
+    .skill-category ul, .module-category ul {
       list-style-type: none;
     }
 
-    .skill-category li {
+    .skill-category li, .module-category li {
       padding: 5px 0;
       position: relative;
       padding-left: 25px;
     }
 
-    .skill-category li:before {
+    .skill-category li:before, .module-category li:before {
+      content: "•";
+      color: var(--accent-color);
+      font-weight: bold;
+      font-size: 1.2em;
+      position: absolute;
+      left: 0;
+    }
+
+    .module-category {
+      margin-bottom: 15px;
+      background-color: white;
+      border-left: 4px solid var(--accent-color);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* New module grid styling */
+    .module-items-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px;
+    }
+
+    .module-item {
+      position: relative;
+      padding-left: 25px;
+      padding-bottom: 5px;
+      display: flex;
+      align-items: center;
+    }
+
+    .module-item:before {
       content: "•";
       color: var(--accent-color);
       font-weight: bold;
@@ -451,8 +502,12 @@
         margin: 20px auto;
       }
 
-      .skills-grid, .projects-grid {
+      .skills-grid, .modules-grid {
         grid-template-columns: 1fr;
+      }
+
+      .module-items-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
       .navbar li {
@@ -469,6 +524,13 @@
 
       .rank-card {
         padding: 30px 20px;
+      }
+      
+      /* For very small screens, make module items single column */
+      @media screen and (max-width: 480px) {
+        .module-items-grid {
+          grid-template-columns: 1fr;
+        }
       }
     }
 
@@ -559,15 +621,48 @@
         </p>
         <img src="uni_logo.png" alt="Cardiff University Logo" class="logo-img">
       </div>
-      <ul>
-        <li><b>Year 1 Modules</b>: Foundations of Mathematics 1 & 2, Computing for Mathematics, 
-          Linear Algebra 1, Probability Theory, Statistical Inference, Geometry, Differential Equations, 
-          Finance 1.</li>
-        <li><b>Year 2 Modules</b>: Linear Algebra 2, Probability and Statistics, Computational Statistics, 
-          Group Theory, Multivariable Calculus, Complex Analysis, Operational Research, 
-          Series and Transforms, Finance 2.</li>
-        <li><b>Year 3 Modules</b>: 13 month Industrial Placement, including a self-directed research project.</li>
-      </ul>
+      <div class="modules-grid">
+        <div class="module-category">
+          <h3>Year 1 Modules</h3>
+          <div class="module-items-grid">
+            <div class="module-item">Foundations of Mathematics 1 & 2</div>
+            <div class="module-item">Computing for Mathematics</div>
+            <div class="module-item">Linear Algebra 1</div>
+            <div class="module-item">Probability Theory</div>
+            <div class="module-item">Statistical Inference</div>
+            <div class="module-item">Geometry</div>
+            <div class="module-item">Differential Equations</div>
+            <div class="module-item">Finance 1</div>
+          </div>
+        </div>
+        
+        <div class="module-category">
+          <h3>Year 2 Modules</h3>
+          <div class="module-items-grid">
+            <div class="module-item">Linear Algebra 2</div>
+            <div class="module-item">Probability and Statistics</div>
+            <div class="module-item">Computational Statistics</div>
+            <div class="module-item">Group Theory</div>
+            <div class="module-item">Multivariable Calculus</div>
+            <div class="module-item">Complex Analysis</div>
+            <div class="module-item">Operational Research</div>
+            <div class="module-item">Series and Transforms</div>
+            <div class="module-item">Finance 2</div>
+          </div>
+        </div>
+        
+        <div class="module-category">
+          <h3>Year 3 Modules</h3>
+          <div class="module-items-grid">
+            <div class="module-item">13 month Industrial Placement</div>
+            <div class="module-item">Self-directed research project comparing three 
+              indirect comparison methods (MAIC, STC and the Bucher Method) via a simulation
+              study, consisting of the creation of an R package and writing of
+               a 5000 word report.
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="rank-card animate-on-scroll" id="skills">
@@ -595,7 +690,9 @@
         <div class="skill-category">
           <h3>Web Development</h3>
           <ul>
-            <li>HTML & CSS</li>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
           </ul>
         </div>
         
@@ -607,7 +704,7 @@
         </div>
         
         <div class="skill-category">
-          <h3>Collaboration and Version Control</h3>
+          <h3>Collaboration & Version Control</h3>
           <ul>
             <li>Git</li>
             <li>GitHub</li>
@@ -706,17 +803,22 @@
       });
    
       const navbar = document.querySelector('.navbar');
+      const root = document.documentElement;
+      const accentColor = getComputedStyle(root).getPropertyValue('--accent-color').trim();
+      const accentLight = getComputedStyle(root).getPropertyValue('--accent-light').trim();
+      const textColor = getComputedStyle(root).getPropertyValue('--text-color').trim();
+      const textLight = getComputedStyle(root).getPropertyValue('--text-light').trim();
       
       window.addEventListener('scroll', function() {
         if (window.scrollY > 100) {
-          navbar.style.backgroundColor = '#D8A7CA';
+          navbar.style.backgroundColor = accentColor;
           navbar.querySelectorAll('a').forEach(link => {
-            link.style.color = 'white';
+            link.style.color = textLight;
           });
         } else {
-          navbar.style.backgroundColor = '#F3E1F5';
+          navbar.style.backgroundColor = accentLight;
           navbar.querySelectorAll('a').forEach(link => {
-            link.style.color = '#4C3A4C';
+            link.style.color = textColor;
           });
         }
       });
