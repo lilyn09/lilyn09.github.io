@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <title>Lily Nan | Statistical Programmer</title>
+  <title>Lily Nan | BSc Maths Student</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Lily Nan">
@@ -180,7 +180,7 @@
      text-align: left;
      font-style: italic;
      font-size: 1.6em;
-  }
+    }
 
     header:hover h1 {
       color: var(--text-color);
@@ -352,100 +352,6 @@
       transform: scale(1.05);
     }
 
-    .skills-grid, .modules-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 20px;
-    }
-
-    .skill-category, .module-category {
-      background-color: var(--text-light);
-      padding: 20px;
-      border-radius: 10px;
-      border-left: 4px solid var(--accent-color);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: transform var(--transition-speed) ease;
-    }
-
-    .skill-category:hover, .module-category:hover {
-      transform: translateY(-5px);
-    }
-
-    .skill-category h3, .module-category h3 {
-      color: var(--primary-color);
-      margin-top: 0;
-      border-bottom: 2px solid var(--accent-light);
-      padding-bottom: 10px;
-      margin-bottom: 15px;
-    }
-
-    .skill-category ul, .module-category ul {
-      list-style-type: none;
-      margin-left: 0;
-      padding-left: 0;
-    }
-
-    .module-items-grid, .skill-items-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 10px;
-    }
-
-    .module-item, .skill-item {
-      position: relative;
-      padding-left: 25px;
-      padding-bottom: 5px;
-      display: flex;
-      align-items: center;
-    }
-
-    .module-item:before, .skill-item:before {
-      content: "•";
-      color: var(--accent-color);
-      font-weight: bold;
-      font-size: 1.2em;
-      position: absolute;
-      left: 0;
-    }
-
-    .skill-category > ul > li {
-      position: relative;
-      padding-left: 25px;
-      padding-bottom: 5px;
-      display: flex;
-      align-items: flex-start;
-      flex-direction: column;
-    }
-
-    .skill-category > ul > li:before {
-      content: "•";
-      color: var(--accent-color);
-      font-weight: bold;
-      font-size: 1.2em;
-      position: absolute;
-      left: 0;
-      top: 2px;
-    }
-
-    .skill-category li ul {
-      margin-top: 5px;
-      padding-left: 10px;
-      width: 100%;
-    }
-
-    .skill-category li ul li {
-      padding-left: 20px;
-      position: relative;
-    }
-
-    .skill-category li ul li:before {
-      content: "◦";
-      font-size: 1em;
-      position: absolute;
-      left: 0;
-    }
-
     .contact-links {
       display: flex;
       justify-content: center;
@@ -455,7 +361,7 @@
     }
 
     .contact-links li a {
-      font-size: 2em;
+      font-size: 3em;
       color: var(--primary-color);
       transition: all var(--transition-speed) ease;
       display: flex;
@@ -481,6 +387,10 @@
       border-top: 1px solid var(--accent-light);
     }
 
+    .skills-technical-section {
+      margin-top: 20px;
+    }
+
     @media screen and (max-width: 768px) {
       .container {
         margin: 1rem;
@@ -504,14 +414,6 @@
         margin: 20px auto;
       }
 
-      .skills-grid, .modules-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .module-items-grid, .skill-items-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
       .navbar li {
         margin: 0 10px;
       }
@@ -527,11 +429,9 @@
       .rank-card {
         padding: 30px 20px;
       }
-    }
-    
-    @media screen and (max-width: 480px) {
-      .module-items-grid, .skill-items-grid {
-        grid-template-columns: 1fr;
+
+      .skills-technical-section {
+        margin-top: 15px;
       }
     }
   </style>
@@ -543,7 +443,7 @@
             Lily Nan
         </h1>
       <p style="font-size: 2em; margin-top: 10px; color: black; font-family: 'Playfair Display', serif;">
-        Bsc Maths | Statistical Programming at UCB
+        Final Year Mathematics Undergraduate
       </p>
     </header>
 
@@ -553,6 +453,7 @@
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
@@ -564,11 +465,13 @@
         <p>
           Hello, I'm Lily! 👋
           <br><br>
-          I'm studying for a Bsc in Mathematics, Operational Research,
-          and Statistics at Cardiff University.
+          I'm a final year BSc Mathematics, Operational Research,
+          and Statistics student at Cardiff University.
           <br><br>
-          Currently, I'm on a placement year at UCB working as 
-          a statistical programmer.
+          I've just returned from a placement year working as a Statistical Programmer at the pharmaceutical company UCB, where 
+          I helped build software like R packages and Shiny apps to support statisticians.
+          <br><br>
+          I'm keen to continue exploring the world of statistics, programming, and data science.
         </p>
         <img src="picture_me.jpg" alt="Lily Nan" class="profile-img">
       </div>
@@ -580,147 +483,117 @@
       <div class="experience-content">
         <div>
           <p>
-            <b>Statistical Programming Placement Student</b>
-            <br>
-            <b>UCB</b>
-            <br>
-            <b>(2024-2025)</b>
+            <b style="font-size:16px;">UCB</b><br>
+            <b style="font-size:16px;">Statistical Programming Placement Student</b><br>
+            <b style="font-size:14px;">(2024–2025)</b>
+
           </p>
           <ul>
-            <li>Developed and maintained open-source and in-house R packages.</li>
-            <li>End-to-end R package development, including designing package architecture,
-               writing efficient R code, creating comprehensive documentation and vignettes, 
-               and implementing unit testing.</li>
-            <li>Delivered impactful presentations to both technical and non-technical
-              audiences of up to 50 people.</li>
-            <li>Conducted research and assessment of various R packages and frameworks, 
-              producing detailed technical reports to guide team decisions.</li>
-            <li>Assisted with recruitment for the next cohort of placement students and 
-              apprentices.</li> 
-            <li>Facilitated work shadowing opportunities for university students.</li>
+            <li><strong>R Package Development:</strong> Built and maintained open-source and in-house R packages, including the open-source package <b><a href="https://github.com/pharmaverse/gridify" target="_blank">{gridify}</a></b>.</li>
+            <li><strong>Shiny Applications:</strong> Developed interactive data visualisation and statistical analysis applications using R Shiny. </li>
+            <li><strong>Data Analysis:</strong> Analysed clinical trial datasets.</li>
+            <li><strong>Research and Report Writing:</strong> Researched various R packages and frameworks, and authored technical reports using RMarkdown and Quarto to help guide team decisions.</li>
+            <li><strong>Communication and Mentoring:</strong> Delivered presentations to audiences of 50+, including senior leadership. Mentored incoming placement students and facilitated work experience opportunities. </li> 
+            <li><strong>Websites:</strong> Designed and built websites using HTML/CSS and Quarto.</li>
           </ul>
         </div>
         <img src="ucb_logo.png" alt="UCB Logo" class="logo-img">
       </div>
     </div>
 
-    <div class="rank-card" id="education">
+<div class="rank-card" id="education">
+  <div class="card-accent"></div>
+  <h2>Education</h2>
+  <div class="education-content">
+    <p>
+      <b style="font-size:16px;">Cardiff University</b><br>
+      <b style="font-size:16px;">BSc Mathematics, Operational Research, and Statistics (with a Professional Placement Year)</b><br>
+      <b style="font-size:14px;">(2022–2026)</b><br><br>
+      First Class achieved in Years 1, 2, and 3. <br>
+      University Undergraduate Scholarship Award received for exam performance.
+
+    </p>
+    <img src="uni_logo.png" alt="Cardiff University Logo" class="logo-img">
+  </div>
+</div>
+
+    <div class="rank-card" id="skills">
       <div class="card-accent"></div>
-      <h2>Education</h2>
-      <div class="education-content">
-        <p>
-          <b>Cardiff University / Prifysgol Caerdydd</b>
-          <br>
-          <b>BSc Mathematics, Operational Research, and Statistics (with a placement year)</b>
-          <br>
-          <b>(2022-2026)</b>
-        </p>
-        <img src="uni_logo.png" alt="Cardiff University Logo" class="logo-img">
-      </div>
-      <div class="modules-grid">
-        <div class="module-category">
-          <h3>Year 1 Modules</h3>
-          <div class="module-items-grid">
-            <div class="module-item">Foundations of Mathematics 1 & 2</div>
-            <div class="module-item">Computing for Mathematics</div>
-            <div class="module-item">Linear Algebra 1</div>
-            <div class="module-item">Probability Theory</div>
-            <div class="module-item">Statistical Inference</div>
-            <div class="module-item">Geometry</div>
-            <div class="module-item">Differential Equations</div>
-            <div class="module-item">Finance 1</div>
+      <h2>Skills</h2>
+      <div style="padding: 0 20px;">
+        <div class="skills-technical-section" style="margin-bottom: 30px;">
+          <h3 style="margin-top: 0; margin-bottom: 20px; display: flex; align-items: center; font-size: 1.4em;">
+            <i class="fas fa-code" style="color: var(--primary-color); margin-right: 12px; font-size: 1.3em;"></i>
+            Technical Skills
+          </h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center; line-height: 2;">
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fab fa-r-project" style="color: #276DC3; margin-right: 8px; font-size: 1.4em;"></i>R
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fab fa-python" style="color: #3776AB; margin-right: 8px; font-size: 1.4em;"></i>Python
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fab fa-html5" style="color: #E34F26; margin-right: 6px; font-size: 1.4em;"></i><i class="fab fa-css3-alt" style="color: #1572B6; margin-right: 8px; font-size: 1.4em;"></i>HTML & CSS
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <img src="https://cdn-icons-png.flaticon.com/512/3665/3665923.png" alt="C" style="width: 20px; height: 20px; margin-right: 8px;">C
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fab fa-git-alt" style="color: #F05032; margin-right: 8px; font-size: 1.4em;"></i>Git
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fas fa-star" style="color: var(--primary-color); margin-right: 8px; font-size: 1.4em;"></i>Shiny
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fas fa-file" style="color: var(--primary-color); margin-right: 8px; font-size: 1.4em;"></i>R Markdown & Quarto
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fas fa-square-root-variable" style="color: var(--primary-color); margin-right: 8px; font-size: 1.4em;"></i>LaTeX
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fab fa-microsoft" style="color: var(--primary-color); margin-right: 8px; font-size: 1.4em;"></i>Azure DevOps
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fas fa-sync-alt" style="color: var(--primary-color); margin-right: 8px; font-size: 1.4em;"></i>Agile & Scrum
+            </span>
           </div>
         </div>
         
-        <div class="module-category">
-          <h3>Year 2 Modules</h3>
-          <div class="module-items-grid">
-            <div class="module-item">Linear Algebra 2</div>
-            <div class="module-item">Probability and Statistics</div>
-            <div class="module-item">Computational Statistics</div>
-            <div class="module-item">Group Theory</div>
-            <div class="module-item">Multivariable Calculus</div>
-            <div class="module-item">Complex Analysis</div>
-            <div class="module-item">Operational Research</div>
-            <div class="module-item">Series and Transforms</div>
-            <div class="module-item">Finance 2</div>
-          </div>
-        </div>
-        
-        <div class="module-category">
-          <h3>Year 3 Modules</h3>
-          <div class="module-items-grid">
-            <div class="module-item">13 month Industrial Placement</div>
-            <div class="module-item">Self-directed research project comparing three 
-              indirect comparison methods (MAIC, STC and the Bucher Method) via a simulation
-              study, consisting of the creation of an R package and writing of
-               a 5000 word report.
-            </div>
+        <div>
+          <h3 style="margin-top: 0; margin-bottom: 20px; display: flex; align-items: center; font-size: 1.4em;">
+            <i class="fas fa-users" style="color: var(--primary-color); margin-right: 12px; font-size: 1.3em;"></i>
+            Soft Skills
+          </h3>
+          <div style="display: flex; flex-wrap: wrap; gap: 15px; align-items: center; line-height: 2;">
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fas fa-handshake" style="color: var(--primary-color); margin-right: 8px; font-size: 1.4em;"></i>Team Collaboration
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fas fa-search" style="color: var(--primary-color); margin-right: 8px; font-size: 1.4em;"></i>Attention to Detail
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fas fa-comments" style="color: var(--primary-color); margin-right: 8px; font-size: 1.4em;"></i>Presenting
+            </span>
+            <span style="display: flex; align-items: center; background: white; padding: 8px 12px; border-radius: 20px; font-size: 0.95em; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+              <i class="fas fa-person-chalkboard" style="color: var(--primary-color); margin-right: 8px; font-size: 1.4em;"></i>Teaching 
+            </span>
+
           </div>
         </div>
       </div>
     </div>
 
-    <div class="rank-card" id="skills">
+    <div class="rank-card" id="projects">
       <div class="card-accent"></div>
-      <h2>Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-category">
-          <h3>Programming & Data Analysis</h3>
-          <div class="skill-items-grid">
-            <div class="skill-item">R</div>
-            <div class="skill-item">Package development</div>
-            <div class="skill-item">Tidyverse ecosystem</div>
-            <div class="skill-item">Shiny apps</div>
-            <div class="skill-item">Python</div>
-            <div class="skill-item">Matplotlib, sympy</div>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Web Development</h3>
-          <div class="skill-items-grid">
-            <div class="skill-item">HTML</div>
-            <div class="skill-item">CSS</div>
-            <div class="skill-item">JavaScript</div>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Database Management</h3>
-          <div class="skill-items-grid">
-            <div class="skill-item">SQL</div>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Collaboration & Version Control</h3>
-          <div class="skill-items-grid">
-            <div class="skill-item">Git</div>
-            <div class="skill-item">GitHub</div>
-            <div class="skill-item">Agile methodologies</div>
-            <div class="skill-item">Scrum practices</div>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Technical Writing</h3>
-          <div class="skill-items-grid">
-            <div class="skill-item">LaTeX</div>
-            <div class="skill-item">R Markdown reports</div>
-            <div class="skill-item">Roxygen documentation</div>
-            <div class="skill-item">Package vignettes</div>
-          </div>
-        </div>
-        
-        <div class="skill-category">
-          <h3>Soft Skills</h3>
-          <div class="skill-items-grid">
-            <div class="skill-item">Presentations</div>
-            <div class="skill-item">Team collaboration</div>
-          </div>
-        </div>
-      </div>
+      <h2>Projects</h2>
+    <p>
+      <b style="font-size:16px;">msb</b><br>
+      An R package to simulate three indirect comparison methods: matching adjusted indirect comparison (MAIC), simulated 
+      treatment comparison (STC), and the Bucher method, under varying scenarios.
+
+    </p>
+    <img src="uni_logo.png" alt="Cardiff University Logo" class="logo-img">
     </div>
 
     <div class="rank-card" id="contact">
@@ -728,7 +601,7 @@
       <h2>Contact</h2>
       <ul class="contact-links">
         <li>
-          <a href="mailto:lilynan51@gmail.com?subject=Hi" title="Email Me">
+          <a href="mailto:lilynan09@gmail.com?subject=Hi" title="Email Me">
             <i class="fas fa-envelope"></i>
             <span>Email</span>
           </a>  
